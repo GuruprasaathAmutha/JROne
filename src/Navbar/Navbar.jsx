@@ -1,26 +1,18 @@
 import React from 'react'
+import dayjs from 'dayjs';
+
+
+console.log(dayjs().format('YYYY-MM-DD HH:mm:ss')); // 2025-02-08 14:30:15
 
 const Navbar = () => {
     return (
 
-        <nav class="fixed w-full bg-teal-300 hover:bg-blue-600 shadow-md duration-300 ease-in-out top-0 left-0 z-50">
-            <div className='max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 h-16'>
-                <ul className='hidden md:flex space-x-6'>
-                    <li onClick={() => {
-                        alert("Redirecting to home page!")
-                    }} className='text-gray-800 hover:text-gray-500 transition duration-300'>Home</li>
-                    <li onClick={() => {
-                        alert("Redirecting to  page!")
-                    }} className='text-gray-800 hover:text-gray-500 transition duration-300'>Contact</li>
-                    <li onClick={() => {
-                        alert("Redirecting to home page!")
-                    }} className='text-gray-800 hover:text-gray-500 transition duration-300'>About</li>
-                    <li onClick={() => {
-                        alert("Redirecting to home page!")
-                    }} className='text-gray-800 hover:text-gray-500 transition duration-300'>License</li>
-                </ul>
+        <div className=' w-full flex  justify-between top-2.5 left-2.5 z-50 p-4'>
+            <div className='w-7 h-16'>  <img src="src/assets/Settings-icon-symbol-vector.png" alt="" />
             </div>
-        </nav>
+            <div className='Quote font-extrabold text-3xl '>  Preserverance Triumphs </div>
+            <div className='Quote w-32'>  <p className='justify-center font-extrabold '> {dayjs().format('YYYY-MM-DD HH:mm:ss')}</p> </div>
+        </div>
     )
 }
 
