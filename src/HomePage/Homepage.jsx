@@ -6,7 +6,7 @@ import bgImagetwo from "../assets/Desktop-Aesthetic-Wallpaper-Anime-Girl.jpg"
 const Homepage = () => {
     return (
         <>
-            <div className='absolute inset-0 opacity-60 h-screen bg-cover bg-center' style={{ backgroundImage: `url(${bgImagetwo})` }}>
+            <div className='absolute inset-0 h-screen bg-cover bg-center' style={{ backgroundImage: `url(${bgImageone})` }}>
             </div>
         </>
 
