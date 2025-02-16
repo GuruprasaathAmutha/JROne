@@ -1,5 +1,5 @@
 
-import bgImageone from "../assets/Velura-Modern-Steel-Blue-Soft-Curvy-Waves-Wallpaper-Mural-710x383.jpg"
+import bgImageone from "../assets/20844835_6248145.svg"
 
 const Homepage = () => {
     return (
