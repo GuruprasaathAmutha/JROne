@@ -1,15 +1,19 @@
 
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaMeta, FaX } from "react-icons/fa6";
 const Pomodoro = () => {
     return (
         // <div className='relative flex w-auto h-auto p-72'> <h1 className='text-white font-bold'>Pomodoro</h1></div>
 
 
-        < footer className=' relative bottom-0 w-full border-1 p-2 border-white  rounded-2xl shadow-2xs ' >
+        < footer className=' relative flex bottom-0 w-auto border-1 p-2 border-white  rounded-2xl shadow-2xs ' >
             <div className="space-x-4 mt-4 md:mt-0 ">
-                <a href="#" className="hover:text-gray-400"><FaFacebook size={20} /></a>
-                <a href="#" className="hover:text-gray-400"><FaTwitter size={20} /></a>
-                <a href="#" className="hover:text-gray-400"><FaInstagram size={20} /></a>
+                <a href="https://en.wikipedia.org/wiki/Facebook" className="text-white hover:text-blue-400"><FaMeta size={20} /></a>
+                <a href="https://en.wikipedia.org/wiki/Twitter" className="text-white hover:text-gray-400"><FaX size={20} /></a>
+                <a href="https://en.wikipedia.org/wiki/Instagram" className="text-white hover:text-pink-400"><FaInstagram size={20} /></a>
+            </div>
+            <div className="space-x-4 mt-4 md:mt-0 ">
+
             </div>
         </footer >
 
