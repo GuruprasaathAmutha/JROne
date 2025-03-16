@@ -31,7 +31,7 @@ const Navbar = () => {
             }} onMouseLeave={() => setsettings(true)} src={`${settings ? "src/assets/settings.svg" : "src/assets/settings_normal.svg"} `} alt="An svg settings icon" />
             </div>
             <div className='titlefont Quote text-3xl  text-white drop-shadow-[2px_2px_0_black]'>  <p style={{ fontFamily: 'Montserrat' }}> ZEN POMO </p></div>
-            <div className='Quote w-32'>  <p className='text-white justify-center font-extrabold '> {time.toUTCString()}</p> </div>
+            <div className='Quote w-32'>  <p className='text-white justify-center font-extrabold '>{time.toLocaleDateString()} {time.toLocaleTimeString()}</p> </div>
         </div>
     )
 }
