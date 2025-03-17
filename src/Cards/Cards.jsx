@@ -42,7 +42,8 @@ const Cards = () => {
     );
 
     const newTaskadd = (e) => {
-        setinputadd(e.target.value)
+        setinputadd(e.target.value);
+        setnewTask(false);
     }
 
 
@@ -64,12 +65,12 @@ const Cards = () => {
                                     name=""
                                     id="newTask"
                                     type="text"
-                                    onChange={newTaskadd}
+                                    onDoubleClick={newTaskadd}
                                     className=" w-48 border-l-4 border-b-2 p-2 mb-4 rounded-md transform transition duration-300  hover:scale-105 text-white mt-2"
                                 />
                                 </li>
                             )}
-                            <li className=" border-l-4 border-b-2 p-2 mb-4  rounded-md transform transition duration-300  hover:scale-105 text-white mt-2"> {inputadd}</li>
+                            {inputadd.length != 0 && < li className=" border-l-4 border-b-2 p-2 mb-4  rounded-md transform transition duration-300  hover:scale-105 text-white mt-2"> {inputadd}</li>}
                             {pending.map((task) => {
                                 return <li className=" border-l-4 border-b-2 p-2 mb-4  rounded-md transform transition duration-300  hover:scale-105 text-white mt-2" key={task.taskid}> {task.task}</li>;
                             })}
@@ -86,7 +87,7 @@ const Cards = () => {
                             })}
                         </ol>
                     </div>
-                    <div className="w-60 h-auto border-2 border-green-600 mx-auto  hover:bg-green-200 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">
+                    <div className="w-60 h-auto border-2 border-green-600 mx-auto  hover:bg-lime-200 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">
                         <h2 className="text-xl text-white font-extrabold">Completed Task</h2>
                         {completed.map((task) => {
                             return <p className="border-l-4 border-b-2 p-2 mb-4 rounded-md transform transition duration-300  hover:scale-105 text-white mt-2" key={task.taskid}>{task.task}</p>;
