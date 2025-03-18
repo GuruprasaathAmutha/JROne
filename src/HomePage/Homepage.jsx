@@ -9,7 +9,7 @@ const Homepage = () => {
 
     return (
         <>
-            <div className='absolute inset-0 h-screen bg-cover bg-center' style={{ backgroundImage: `url(${bgImageone})` }}>
+            <div className='fixed inset-0 brightness-50 bg-cover bg-center' style={{ backgroundImage: `url(${bgImageone})` }}>
             </div>
         </>
 

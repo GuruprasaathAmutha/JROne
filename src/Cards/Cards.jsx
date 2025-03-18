@@ -7,7 +7,6 @@ const Cards = () => {
     const [OnProgress, setOPtasks] = useState([]);
     const [completed, setCtasks] = useState([]);
     const [newTask, setnewTask] = useState(false);
-    const [inputadd, setinputadd] = useState('');
     const [taskaddSuccess, settaskaddSuccess] = useState('');
 
     useEffect(
@@ -43,7 +42,6 @@ const Cards = () => {
     );
 
     const newTaskadd = (e) => {
-        setinputadd(e.target.value);
         setnewTask(false);
         addnewTask(e.target.value);
     }
@@ -63,7 +61,7 @@ const Cards = () => {
         <>
             <div className=' relative w-full flex-1'>
                 <div className="flex content-center">
-                    <div className="w-60 border-2 border-red-600 h-auto  mx-auto  hover:bg-red-600 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6">
+                    <div className="w-60 border-2 border-red-600 h-fit  mx-auto  hover:bg-red-600 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6">
                         <div className="flex mb-8">
                             <h2 className="text-xl text-white font-extrabold">To-Do</h2>
                             <input type="button" value="+" className="ml-auto font-extrabold text-white hover:cursor-pointer" onClick={() => {
@@ -81,13 +79,12 @@ const Cards = () => {
                                 />
                                 </li>
                             )}
-                            {inputadd.length != 0 && < li className=" border-l-4 border-b-2 p-2 mb-4  rounded-md transform transition duration-300  hover:scale-105 text-white mt-2"> {inputadd}</li>}
                             {pending.map((task) => {
                                 return <li className=" border-l-4 border-b-2 p-2 mb-4  rounded-md transform transition duration-300  hover:scale-105 text-white mt-2" key={task.taskid}> {task.task}</li>;
                             })}
                         </ol>
                     </div>
-                    <div className="w-60 h-auto  border-2 border-yellow-500 mx-auto  hover:bg-yellow-500 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">
+                    <div className="w-60 h-fit  border-2 border-yellow-500 mx-auto  hover:bg-yellow-500 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">
 
                         <div className="flex mb-8">
                             <h2 className="text-xl text-white font-extrabold">On-Going Task</h2>
@@ -99,7 +96,7 @@ const Cards = () => {
                         </ol>
                     </div>
 
-                    <div className="w-60 h-auto border-2 border-green-600 hover:bg-lime-600 mx-auto  duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">
+                    <div className="w-60 h-fit border-2 border-green-600 hover:bg-lime-600 mx-auto  duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">
                         <div className="flex mb-8">
                             <h2 className="text-xl text-white font-extrabold">Completed Task</h2>
                         </div>
