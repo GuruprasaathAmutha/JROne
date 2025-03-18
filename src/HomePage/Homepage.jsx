@@ -1,10 +1,15 @@
 
-import bgImageone from "../assets/Velura-Modern-Steel-Blue-Soft-Curvy-Waves-Wallpaper-Mural-710x383.jpg"
+import { useState } from "react"
+import bgImageone from "../assets/20844835_6248145.svg"
 
 const Homepage = () => {
+
+    const [bgarr, setbgarr] = useState([]);
+
+
     return (
         <>
-            <div className='absolute inset-0 h-screen bg-cover bg-center' style={{ backgroundImage: `url(${bgImageone})` }}>
+            <div className='fixed inset-0 brightness-50 bg-cover bg-center' style={{ backgroundImage: `url(${bgImageone})` }}>
             </div>
         </>
 
