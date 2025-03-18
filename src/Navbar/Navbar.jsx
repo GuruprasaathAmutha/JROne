@@ -23,15 +23,18 @@ const Navbar = () => {
     )
     return (
 
-        <div className=' w-full flex justify-between top-2.5 left-2.5 z-50 p-4'>
+        <div className=' w-full flex justify-between z-50 p-4'>
 
-            <div className='w-7 h-16'>  <img onMouseEnter={() => {
-                setsettings(false);
-                settingsModal();
-            }} onMouseLeave={() => setsettings(true)} src={`${settings ? "src/assets/settings.svg" : "src/assets/settings_normal.svg"} `} alt="An svg settings icon" />
+            <div className='w-60'>
+                <div className='w-7 h-16'>  <img onMouseEnter={() => {
+                    setsettings(false);
+                    settingsModal();
+                }} onMouseLeave={() => setsettings(true)} src={`${settings ? "src/assets/settings.svg" : "src/assets/settings_normal.svg"} `} alt="An svg settings icon" />
+                </div>
             </div>
-            <div className='titlefont Quote text-3xl  text-white drop-shadow-[2px_2px_0_black]'>  <p style={{ fontFamily: 'Montserrat' }}> ZEN POMO </p></div>
-            <div className='Quote w-32'>  <p className='text-white justify-center font-extrabold '>{time.toLocaleDateString()} {time.toLocaleTimeString()}</p> </div>
+
+            <div className='w-60 titlefont Quote text-3xl  text-white drop-shadow-[2px_2px_0_black]'>  <p className='flex pl-8.5' style={{ fontFamily: 'Montserrat' }}> ZEN POMO </p></div>
+            <div className='Quote w-60'>  <p className='text-white justify-center font-extrabold '>{time.toLocaleDateString()} {time.toLocaleTimeString()}</p> </div>
         </div>
     )
 }

@@ -59,7 +59,7 @@ const Cards = () => {
     return (
 
         <>
-            <div className=' relative w-full flex-1'>
+            <div className=' relative w-full flex-wrap'>
                 <div className="flex content-center">
                     <div className="w-60 border-2 border-red-600 h-fit  mx-auto  hover:bg-red-600 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6">
                         <div className="flex mb-8">
