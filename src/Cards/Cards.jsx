@@ -8,6 +8,7 @@ const Cards = () => {
     const [completed, setCtasks] = useState([]);
     const [newTask, setnewTask] = useState(false);
     const [inputadd, setinputadd] = useState('');
+    const [taskaddSuccess, settaskaddSuccess] = useState('');
 
     useEffect(
         () => {
@@ -44,6 +45,16 @@ const Cards = () => {
     const newTaskadd = (e) => {
         setinputadd(e.target.value);
         setnewTask(false);
+        addnewTask(e.target.value);
+    }
+
+    const addnewTask = (e) => {
+        fetch(`http://localhost:9092/newTask?task=${e}`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
     }
 
 
