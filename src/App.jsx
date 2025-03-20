@@ -2,6 +2,7 @@ import Navbar from "./Navbar/Navbar";
 import Homepage from "./HomePage/Homepage";
 import Cards from "./Cards/Cards";
 import Pomodoro from "./Pomodoro/Pomodoro";
+import { DndContext, closestCorners } from "@dnd-kit/core";
 
 
 export default function App() {
@@ -11,7 +12,10 @@ export default function App() {
         <Homepage>
         </Homepage>
         <Navbar></Navbar>
-        <Cards></Cards>
+        <DndContext collisionDetection={closestCorners}>
+          <Cards></Cards>
+        </DndContext>
+
         <Pomodoro></Pomodoro>
 
 

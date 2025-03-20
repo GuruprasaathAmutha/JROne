@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-
+import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
+import { TASK } from "./TASK";
 
 const Cards = () => {
 
@@ -7,7 +8,7 @@ const Cards = () => {
     const [OnProgress, setOPtasks] = useState([]);
     const [completed, setCtasks] = useState([]);
     const [newTask, setnewTask] = useState(false);
-    const [taskaddSuccess, settaskaddSuccess] = useState('');
+
 
     useEffect(
         () => {
@@ -57,9 +58,8 @@ const Cards = () => {
 
 
     return (
-
         <>
-            <div className=' relative w-full flex-wrap'>
+            <div className=' relative w-full min-h-screen flex-wrap'>
                 <div className="flex content-center">
                     <div className="w-60 border-2 border-red-600 h-fit  mx-auto  hover:bg-red-600 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6">
                         <div className="flex mb-8">
@@ -79,9 +79,14 @@ const Cards = () => {
                                 />
                                 </li>
                             )}
-                            {pending.map((task) => {
-                                return <li className=" border-l-4 border-b-2 p-2 mb-4  rounded-md transform transition duration-300  hover:scale-105 text-white mt-2" key={task.taskid}> {task.task}</li>;
-                            })}
+
+                            <SortableContext items={pending} strategy={verticalListSortingStrategy}>
+                                {pending.map((task) => {
+                                    return <li className=" border-l-4 border-b-2 p-2 mb-4  rounded-md transform transition duration-300  hover:scale-105 text-white mt-2" key={task.taskid} >{task.task}</li>
+                                    // <TASK key={task.taskid}>{task.task}</TASK>
+                                })}
+                            </SortableContext>
+
                         </ol>
                     </div>
                     <div className="w-60 h-fit  border-2 border-yellow-500 mx-auto  hover:bg-yellow-500 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">

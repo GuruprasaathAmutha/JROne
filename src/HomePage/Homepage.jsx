@@ -1,10 +1,10 @@
 
-import { useState } from "react"
+// import { useState } from "react"
 import bgImageone from "../assets/20844835_6248145.svg"
 
 const Homepage = () => {
 
-    const [bgarr, setbgarr] = useState([]);
+    // const [bgarr, setbgarr] = useState([]);  -- For Settings development
 
 
     return (

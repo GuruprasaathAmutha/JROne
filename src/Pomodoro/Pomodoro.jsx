@@ -3,9 +3,6 @@ import { FaInstagram } from "react-icons/fa";
 import { FaMeta, FaX } from "react-icons/fa6";
 const Pomodoro = () => {
     return (
-        // <div className='relative flex w-auto h-auto p-72'> <h1 className='text-white font-bold'>Pomodoro</h1></div>
-
-
         < footer className=' relative flex bottom-0 w-auto border-1 p-2 border-white  rounded-2xl shadow-2xs ' >
             <div className="space-x-4 mt-4 md:mt-0 ">
                 <a href="https://en.wikipedia.org/wiki/Facebook" className="text-white hover:text-blue-800 hover:brightness-200"><FaMeta size={20} /></a>
