@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
-import { TASK } from "./TASK";
+// import { TASK } from "./TASK";
 
 const Cards = () => {
 
@@ -59,7 +59,7 @@ const Cards = () => {
 
     return (
         <>
-            <div className=' relative w-full min-h-screen flex-wrap'>
+            <div className='  flex-wrap md:flex-row w-full min-h-screen '>
                 <div className="flex content-center">
                     <div className="w-60 border-2 border-red-600 h-fit  mx-auto  hover:bg-red-600 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6">
                         <div className="flex mb-8">
