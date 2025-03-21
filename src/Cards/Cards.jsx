@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
-// import { TASK } from "./TASK";
+
+import { Pending } from "./Pending";
 
 const Cards = () => {
 
@@ -59,7 +60,7 @@ const Cards = () => {
 
     return (
         <>
-            <div className='  flex-wrap md:flex-row w-full min-h-screen '>
+            <div className='flex-wrap md:flex-row w-full min-h-screen '>
                 <div className="flex content-center">
                     <div className="w-60 border-2 border-red-600 h-fit  mx-auto  hover:bg-red-600 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6">
                         <div className="flex mb-8">
@@ -68,6 +69,7 @@ const Cards = () => {
                                 setnewTask(true);
                             }} />
                         </div>
+
                         <ol >
                             {newTask && (
                                 <li className=""><input
@@ -81,10 +83,9 @@ const Cards = () => {
                             )}
 
                             <SortableContext items={pending} strategy={verticalListSortingStrategy}>
-                                {pending.map((task) => {
-                                    return <li className=" border-l-4 border-b-2 p-2 mb-4  rounded-md transform transition duration-300  hover:scale-105 text-white mt-2" key={task.taskid} >{task.task}</li>
-                                    // <TASK key={task.taskid}>{task.task}</TASK>
-                                })}
+                                {pending.map((task) => (
+                                    <Pending key={task.taskid} arg={task.task} />
+                                ))}
                             </SortableContext>
 
                         </ol>
