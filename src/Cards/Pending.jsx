@@ -1,16 +1,25 @@
 import PropTypes from "prop-types";
 import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 
 
 
-export const Pending = ({ arg }) => {
+export const Pending = ({ id, arg }) => {
+    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id })
+    const style = {
+        transition,
+        transform: CSS.Transform.toString(transform),
+    }
     return (
-        <li className=" border-l-4 border-b-2 p-2 mb-4  rounded-md transform transition duration-300  hover:scale-105 text-white mt-2">{arg}</li>
+        <div ref={setNodeRef} {...attributes} {...listeners} style={style} className="border-2 p-2 m-2 font-bold bg-white"  >
+            {id}  {arg}
+        </div>
     )
 }
 
 
 Pending.propTypes = {
     arg: PropTypes.arrayOf(PropTypes.string).isRequired,
+    id: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

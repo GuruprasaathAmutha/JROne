@@ -3,12 +3,14 @@ import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
 
 import { Pending } from "./Pending";
 
-const Cards = () => {
+const Cards = ({ myMap }) => {
 
     const [pending, setPtasks] = useState([]);
     const [OnProgress, setOPtasks] = useState([]);
     const [completed, setCtasks] = useState([]);
     const [newTask, setnewTask] = useState(false);
+    const dummy = ["apple", "dog", "cat"];
+
 
 
     useEffect(
@@ -59,61 +61,71 @@ const Cards = () => {
 
 
     return (
-        <>
-            <div className='flex-wrap md:flex-row w-full min-h-screen '>
-                <div className="flex content-center">
-                    <div className="w-60 border-2 border-red-600 h-fit  mx-auto  hover:bg-red-600 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6">
-                        <div className="flex mb-8">
-                            <h2 className="text-xl text-white font-extrabold">To-Do</h2>
-                            <input type="button" value="+" className="ml-auto font-extrabold text-white hover:cursor-pointer" onClick={() => {
-                                setnewTask(true);
-                            }} />
-                        </div>
 
-                        <ol >
-                            {newTask && (
-                                <li className=""><input
-                                    name=""
-                                    id="newTask"
-                                    type="text"
-                                    onDoubleClick={newTaskadd}
-                                    className=" w-48 border-l-4 border-b-2 p-2 mb-4 rounded-md transform transition duration-300  hover:scale-105 text-white mt-2"
-                                />
-                                </li>
-                            )}
 
-                            <SortableContext items={pending} strategy={verticalListSortingStrategy}>
-                                {pending.map((task) => (
-                                    <Pending key={task.taskid} arg={task.task} />
-                                ))}
-                            </SortableContext>
+        <div className="bg-amber-200 w-min flex-wrap h-fit">
+            <SortableContext items={myMap} strategy={verticalListSortingStrategy}>
 
-                        </ol>
-                    </div>
-                    <div className="w-60 h-fit  border-2 border-yellow-500 mx-auto  hover:bg-yellow-500 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">
+                {myMap.map((task) => (
+                    <Pending id={task.taskid} key={task.taskid} arg={task.task} />
+                ))}
+            </SortableContext>
+        </div>
 
-                        <div className="flex mb-8">
-                            <h2 className="text-xl text-white font-extrabold">On-Going Task</h2>
-                        </div>
-                        <ol>
-                            {OnProgress.map((task) => {
-                                return <li className=" border-l-4 border-b-2 p-2 mb-4 rounded-md transform transition duration-300  hover:scale-105 text-white mt-2" key={task.taskid}>{task.task}</li>;
-                            })}
-                        </ol>
-                    </div>
 
-                    <div className="w-60 h-fit border-2 border-green-600 hover:bg-lime-600 mx-auto  duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">
-                        <div className="flex mb-8">
-                            <h2 className="text-xl text-white font-extrabold">Completed Task</h2>
-                        </div>
 
-                        {completed.map((task) => {
-                            return <p className="border-l-4 border-b-2 p-2 mb-4 rounded-md transform transition duration-300  hover:scale-105 text-white mt-2" key={task.taskid}>{task.task}</p>;
-                        })}
-                    </div>
-                </div>
-            </div >
-        </>
+        // {/* <div className='flex-wrap md:flex-row w-full min-h-screen '>
+        //     <div className="flex content-center">
+
+        //         <div className="w-60 border-2 border-red-600 h-fit  mx-auto  hover:bg-red-600 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6">
+        //             <div className="flex mb-8">
+        //                 <h2 className="text-xl text-white font-extrabold">To-Do</h2>
+        //                 <input type="button" value="+" className="ml-auto font-extrabold text-white hover:cursor-pointer" onClick={() => {
+        //                     setnewTask(true);
+        //                 }} />
+        //             </div>
+
+
+
+        //             <ol >
+        //                 {newTask && (
+        //                     <li className=""><input
+        //                         name=""
+        //                         id="newTask"
+        //                         type="text"
+        //                         onDoubleClick={newTaskadd}
+        //                         className=" w-48 border-l-4 border-b-2 p-2 mb-4 rounded-md transform transition duration-300  hover:scale-105 text-white mt-2"
+        //                     />
+        //                     </li>
+        //                 )}
+        //             </ol>
+        //         </div>
+
+
+        //         <div className="w-60 h-fit  border-2 border-yellow-500 mx-auto  hover:bg-yellow-500 duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">
+
+        //             <div className="flex mb-8">
+        //                 <h2 className="text-xl text-white font-extrabold">On-Going Task</h2>
+        //             </div>
+        //             <ol>
+        //                 {OnProgress.map((task) => {
+        //                     return <li className=" border-l-4 border-b-2 p-2 mb-4 rounded-md transform transition duration-300  hover:scale-105 text-white mt-2" key={task.taskid}>{task.task}</li>;
+        //                 })}
+        //             </ol>
+        //         </div>
+
+        //         <div className="w-60 h-fit border-2 border-green-600 hover:bg-lime-600 mx-auto  duration-300 hover: transition-all drop-shadow-2xl rounded-3xl p-6 ">
+        //             <div className="flex mb-8">
+        //                 <h2 className="text-xl text-white font-extrabold">Completed Task</h2>
+        //             </div>
+
+        //             {completed.map((task) => {
+        //                 return <p className="border-l-4 border-b-2 p-2 mb-4 rounded-md transform transition duration-300  hover:scale-105 text-white mt-2" key={task.taskid}>{task.task}</p>;
+        //             })}
+        //         </div>
+        //     </div>
+        // </div > */}
+
     )
 }
 
