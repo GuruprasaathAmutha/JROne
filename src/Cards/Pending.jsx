@@ -5,16 +5,26 @@ import { CSS } from "@dnd-kit/utilities";
 
 
 
-export const Pending = ({ id, arg }) => {
-    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id })
+export const Pending = (props) => {
+    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: props.id })
     const style = {
         transition,
         transform: CSS.Transform.toString(transform),
     }
     return (
-        <div ref={setNodeRef} {...attributes} {...listeners} style={style} className="border-2 p-2 m-2 font-bold bg-white"  >
-            {id}  {arg}
-        </div>
+        <>
+            <button ref={setNodeRef} {...attributes} {...listeners} style={style} className="border-2 p-2 m-2 font-bold bg-white"  >
+                {props.id}  {props.arg}
+            </button>
+            <button ref={setNodeRef} {...attributes} {...listeners} style={style} className="border-2 p-2 m-2 font-bold bg-white"  >
+                {props.id}  {props.arg}
+            </button>
+            <button ref={setNodeRef} {...attributes} {...listeners} style={style} className="border-2 p-2 m-2 font-bold bg-white"  >
+                {props.id}  {props.arg}
+            </button>
+        </>
+
+
     )
 }
 

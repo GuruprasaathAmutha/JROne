@@ -3,7 +3,7 @@ import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
 
 import { Pending } from "./Pending";
 
-const Cards = ({ myMap }) => {
+const Cards = (props) => {
 
     const [pending, setPtasks] = useState([]);
     const [OnProgress, setOPtasks] = useState([]);
@@ -64,11 +64,12 @@ const Cards = ({ myMap }) => {
 
 
         <div className="bg-amber-200 w-min flex-wrap h-fit">
-            <SortableContext items={myMap} strategy={verticalListSortingStrategy}>
+            <SortableContext items={props.myMap} strategy={verticalListSortingStrategy}>
 
-                {myMap.map((task) => (
+                {/* {props.myMap.map((task) => (
                     <Pending id={task.taskid} key={task.taskid} arg={task.task} />
-                ))}
+                ))} */}
+
             </SortableContext>
         </div>
 
