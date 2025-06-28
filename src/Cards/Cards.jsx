@@ -7,27 +7,19 @@ const Cards = () => {
     const [OnProgress, setOPtasks] = useState([]);
     const [completed, setCtasks] = useState([]);
     const [newTask, setnewTask] = useState(false);
-    const [shouldFetch, setShouldFetch] = useState(false);
+    const [change, setChange] = useState(false);
 
 
 
-    const pendingFetch = async () => {
+    useEffect(
+       () => {
         fetch("http://localhost:9092/Pending").then((Response) => Response.json()).
             then((data) => {
                 setPtasks(data);
             }).
             catch((error) => console.log(error))
-    };
+    }, [change]);
 
-
-    useEffect(
-        () => {
-            if (shouldFetch) {
-                pendingFetch();
-                setShouldFetch(false);
-            }
-        }, [shouldFetch]
-    );
 
     useEffect(
         () => {
@@ -54,8 +46,7 @@ const Cards = () => {
     const newTaskadd = (e) => {
         if (e.key === 'Enter') {
             setnewTask(false);
-            addnewTask(e.target.value);
-            setShouldFetch(true);
+            addnewTask(e.target.value);  
         }
 
     }
@@ -66,7 +57,14 @@ const Cards = () => {
             headers: {
                 'content-type': 'application/json'
             }
-        })
+        }).then((Response) => {
+            if (Response.ok) {
+                setChange(!change);
+            } else {
+                console.error("Failed to add new task");
+            }
+        }).catch((error) => console.error("Error:", error));
+        e.target.value = '';
     }
 
 
