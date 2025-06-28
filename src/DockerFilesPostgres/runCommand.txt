@@ -1,0 +1,1 @@
+docker run --name psqlDB  -e POSTGRES_USER=guru  -e POSTGRES_PASSWORD=33degree  -e POSTGRES_DB=personal  -p 5432:5432  -d postgres:16-alpines
