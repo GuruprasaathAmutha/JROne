@@ -16,12 +16,6 @@ export const Pending = (props) => {
             <button ref={setNodeRef} {...attributes} {...listeners} style={style} className="border-2 p-2 m-2 font-bold bg-white"  >
                 {props.id}  {props.arg}
             </button>
-            <button ref={setNodeRef} {...attributes} {...listeners} style={style} className="border-2 p-2 m-2 font-bold bg-white"  >
-                {props.id}  {props.arg}
-            </button>
-            <button ref={setNodeRef} {...attributes} {...listeners} style={style} className="border-2 p-2 m-2 font-bold bg-white"  >
-                {props.id}  {props.arg}
-            </button>
         </>
 
 
