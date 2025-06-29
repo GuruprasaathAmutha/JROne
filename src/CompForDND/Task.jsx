@@ -12,9 +12,7 @@ const style={
 
   return (
         <div ref={setNodeRef} style={style} {...attributes} {...listeners} className='border-8 bg-gray-400'>
-
             {taskdesc}
-
         </div>
   )
 }
