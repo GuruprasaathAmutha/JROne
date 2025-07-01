@@ -4,7 +4,6 @@ import Task from './Task'
 const Column = ({ task }) => {
   return <div>
       <SortableContext items={task} strategy={verticalListSortingStrategy}>
-
         {task.map(one => (
           <Task id={one.id} taskdesc={one.desc} key={one.id}></Task>
         ))}
