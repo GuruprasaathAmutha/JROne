@@ -1,4 +1,4 @@
-import { closestCorners, DndContext } from "@dnd-kit/core";
+
 import { useState } from "react";
 import Column from "./CompForDND/Column";
 import { arrayMove } from "@dnd-kit/sortable";
@@ -40,9 +40,9 @@ export default function App() {
 
         <Homepage></Homepage>
         <Navbar></Navbar>
-        <DndContext>
+    
           <Cards />
-        </DndContext>
+   
         <Pomodoro></Pomodoro>
 
       </div>
